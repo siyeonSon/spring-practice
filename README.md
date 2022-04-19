@@ -1,12 +1,12 @@
 ### item-service
 - 핵심 비즈니스 로직
-  - 항상 데이터를 itemRepository.save(new Item( ... )) 해 줘야 함
-  - itemRepository 는 데이터 임시 저장소
+  - 항상 데이터를 `itemRepository.save(new Item( ... ))` 해 줘야 함
+  - `itemRepository` 는 데이터 임시 저장소
 - MVC
-  - Model : View 와 Controller 사이에 데이터 전송 다리. View에서 사용될 데이터들은 모두 Controller에서 전달해 줘야 함.(Model model 선언 or @ModelAttribute 사용)
-  - View : HTML파일(static), thymleaf파일(templates)
-  - Controller : 한 파일에 @RequestMapping("url 주소") 하여 들어가 있음. return 값은 html 파일 경로, but redirect 하면 url 경로로 이동 가능 ~> PRG
+  - Model : View 와 Controller 사이에 데이터 전송 다리. View에서 사용될 데이터들은 모두 Controller에서 전달해 줘야 함.(`Model model` 선언 or `@ModelAttribute` 사용)
+  - View : HTML파일(static), Thymeleaf파일(templates)
+  - Controller : 한 파일에 `@RequestMapping("url 주소")` 하여 들어가 있음. return 값은 html 파일 경로, but redirect 하면 url 경로로 이동 가능 ~> PRG
 - PRG
   - 상품수정(Post) 후에 상품상세 페이지로 다시 돌아감. 이때 새로고침 해 주면 Post가 계속 실행되어 값이 누적됨
   - 뷰 템플릿으로 이동하지 않고, 상품상세 화면으로 리다이렉트 호출해 주면 Get으로 처리되어 새로 고침 문제 해결 가능
-- *오타나 / 미기입으로 인해 화면 랜더링 에러가 자주 발생하니 신경 쓸 것
+- *오타나 / 미기입으로 인해 화면 렌더링 이슈가 자주 발생하니 신경 쓸 것
